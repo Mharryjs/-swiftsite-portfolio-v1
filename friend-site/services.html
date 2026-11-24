@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SwiftSite – Services</title>
+  <meta name="description" content="Web development, AI integration, e-commerce, UI/UX design, performance optimization and website maintenance by SwiftSite.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="services">
+  <div class="bg-grid"></div>
+  <div class="loader" id="loader"><div class="loader-inner"><div class="loader-logo">SS</div><div class="loader-bar"><div class="loader-fill"></div></div></div></div>
+
+  <nav class="navbar" id="navbar">
+    <div class="nav-container">
+      <a class="nav-logo" href="index.html">
+        <span class="logo-icon"><img data-logo alt=""><span class="logo-txt">SS</span><span class="logo-badge">✦</span></span>
+        <span class="logo-text" data-t="brand">Swift<span>Site</span></span>
+      </a>
+      <div class="nav-links">
+        <a class="nav-link" data-page="home" href="index.html">Home</a>
+        <a class="nav-link" data-page="about" href="about.html">About</a>
+        <a class="nav-link" data-page="services" href="services.html">Services</a>
+        <a class="nav-link" data-page="projects" href="projects.html">Projects</a>
+        <a class="nav-link" data-page="contact" href="contact.html">Contact</a>
+      </div>
+      <div class="nav-right">
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+  <div class="mobile-menu" id="mobileMenu">
+    <a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a>
+  </div>
+
+  <main class="main-content">
+    <div class="page-hero">
+      <div class="page-hero-shape s1"></div><div class="page-hero-shape s2"></div>
+      <div class="page-hero-content"><span class="section-tag">What I Offer</span><h1>Professional Services</h1><p>High-quality web solutions tailored to your business goals.</p></div>
+    </div>
+
+    <div class="services-wrap">
+      <div style="text-align:center">
+        <div class="price-switch" id="priceSwitch" role="group" aria-label="Price currency">
+          <button type="button" data-cur="pk">🇵🇰 Pakistan</button>
+          <button type="button" data-cur="us" class="on">🇺🇸 USA</button>
+        </div>
+      </div>
+      <div class="services-grid">
+        <article class="service-card"><div class="ico">🌐</div><h3>Website Development</h3><p>Custom-built, fully responsive websites using the latest technologies. From landing pages to complex multi-page platforms.</p><ul><li>Responsive Design</li><li>SEO Optimized</li><li>Fast Load Speed</li><li>Cross-Browser Compatible</li></ul><div class="price-row"><span data-price="web">Starting at <strong>$150</strong></span><a href="contact.html" class="btn-outline">Get a Quote</a></div></article>
+        <article class="service-card popular"><span class="pop">⭐ Most Popular</span><div class="ico">🤖</div><h3>AI Integration</h3><p>Add powerful AI features to your website — chatbots, content generators, smart recommendations, and more.</p><ul><li>AI Chatbot Setup</li><li>OpenAI Integration</li><li>Smart Automation</li><li>Custom AI Workflows</li></ul><div class="price-row"><span data-price="ai">Starting at <strong>$300</strong></span><a href="contact.html" class="btn-outline">Get a Quote</a></div></article>
+        <article class="service-card"><div class="ico">🛒</div><h3>E-Commerce Solutions</h3><p>Fully functional online stores with payment integration, inventory management, and order tracking systems.</p><ul><li>Payment Gateway</li><li>Product Management</li><li>Order Tracking</li><li>Admin Dashboard</li></ul><div class="price-row"><span data-price="ecom">Starting at <strong>$400</strong></span><a href="contact.html" class="btn-outline">Get a Quote</a></div></article>
+        <article class="service-card"><div class="ico">📱</div><h3>UI/UX Design</h3><p>Beautiful, user-centric designs that convert visitors into customers with intuitive interfaces and visual appeal.</p><ul><li>Wireframing</li><li>Prototype Design</li><li>Figma Mockups</li><li>Brand Consistency</li></ul><div class="price-row"><span data-price="ui">Starting at <strong>$120</strong></span><a href="contact.html" class="btn-outline">Get a Quote</a></div></article>
+        <article class="service-card"><div class="ico">⚡</div><h3>Performance Optimization</h3><p>Speed audits and optimization to boost your site's performance, Core Web Vitals, and Google rankings.</p><ul><li>Speed Audit</li><li>Image Optimization</li><li>Code Minification</li><li>Caching Setup</li></ul><div class="price-row"><span data-price="perf">Starting at <strong>$100</strong></span><a href="contact.html" class="btn-outline">Get a Quote</a></div></article>
+        <article class="service-card"><div class="ico">🔧</div><h3>Website Maintenance</h3><p>Ongoing support, updates, and security monitoring to keep your website running smoothly 24/7.</p><ul><li>Regular Updates</li><li>Security Monitoring</li><li>Bug Fixes</li><li>Content Updates</li></ul><div class="price-row"><span data-price="maint" data-suffix="/mo">Starting at <strong>$50/mo</strong></span><a href="contact.html" class="btn-outline">Get a Quote</a></div></article>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo"><span class="logo-icon"><img data-logo alt=""><span class="logo-txt">SS</span><span class="logo-badge">✦</span></span><span data-t="brand">SwiftSite</span></div>
+          <p>Building next-generation digital experiences with cutting-edge technology and creative design.</p>
+          <div class="footer-social">
+            <a data-href="email" href="mailto:sswiftsite@gmail.com" title="Email">📧</a>
+            <a data-href="whatsapp" href="https://wa.me/923133073742" target="_blank" rel="noopener" title="WhatsApp">💬</a>
+            <a data-href="github" href="https://github.com/Mharryjs" target="_blank" rel="noopener" title="GitHub">💻</a>
+            <a data-href="instagram" href="#" target="_blank" rel="noopener" title="Instagram" style="display:none">📸</a>
+            <a data-href="linkedin" href="#" target="_blank" rel="noopener" title="LinkedIn" style="display:none">💼</a>
+          </div>
+        </div>
+        <div class="footer-links-col"><h4>Quick Links</h4><a href="index.html">Home</a><a href="about.html">About</a><a href="services.html">Services</a><a href="projects.html">Projects</a><a href="contact.html">Contact</a></div>
+        <div class="footer-links-col"><h4>Services</h4><a href="services.html">Web Development</a><a href="services.html">AI Integration</a><a href="services.html">E-Commerce</a><a href="services.html">UI/UX Design</a></div>
+        <div class="footer-links-col"><h4>Contact</h4>
+          <a data-href="email" href="mailto:sswiftsite@gmail.com" data-t="email">sswiftsite@gmail.com</a>
+          <a data-href="whatsapp" href="https://wa.me/923133073742" target="_blank" rel="noopener">WhatsApp: <span data-t="phone">0313 3073742</span></a>
+          <a href="contact.html" data-t="location">Pakistan</a>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>© 2026 <strong data-t="brand">SwiftSite</strong> by MharryJS. All rights reserved.</p></div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" data-href="whatsappChat" href="https://wa.me/923133073742?text=Hi%20Mharry!%20I%20found%20your%20portfolio%20and%20would%20like%20to%20discuss%20a%20project." target="_blank" rel="noopener" title="Chat on WhatsApp">💬</a>
+  <div class="toast" id="toast"></div>
+  <script src="script.js"></script>
+</body>
+</html>

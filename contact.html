@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Contact — Let's Build Something Great | SwiftSite</title>
+<meta name="description" content="Contact SwiftSite to discuss your website, web application or AI project.">
+<meta name="theme-color" content="#f8f5ee">
+<link rel="icon" href="assets/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Manrope:wght@500;600;700;800&family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body data-page="contact">
+<div class="loader" aria-hidden="true"><div><div class="loader-badge"><span class="logo-badge"><img data-logo src="assets/logo.png" alt="" onerror="this.style.opacity=0"></span></div><p>SWIFTSITE</p></div></div>
+
+<main>
+  <section class="page-hero">
+    <div class="botanical float-slow" data-speed="-0.05" style="right:-30px;top:110px;width:230px;height:330px">
+      <svg viewBox="0 0 200 300" fill="none"><path d="M120 300C118 220 128 140 150 60" stroke="#c6a664" stroke-width="1"/><path d="M122 200c28-8 46-30 48-56-26 6-44 28-48 56z" fill="rgba(169,191,166,.3)" stroke="#a9bfa6" stroke-width=".8"/><path d="M130 140c-26-8-40-30-40-54 24 8 38 30 40 54z" fill="rgba(227,236,223,.6)" stroke="#a9bfa6" stroke-width=".8"/><circle cx="150" cy="62" r="3" fill="#e6d3a3"/></svg>
+    </div>
+    <div class="wrap">
+      <span class="eyebrow reveal">Contact</span>
+      <h1 class="reveal" data-d="1">Let's Build Something <span class="serif">Great.</span></h1>
+      <p class="lead reveal" data-d="2">Tell me about your project. Messages are currently delivered through Instagram while direct form integration is being set up.</p>
+      <p class="crumb reveal" data-d="3"><a href="index.html">Home</a> &nbsp;/&nbsp; Contact</p>
+    </div>
+  </section>
+
+  <section class="section" style="padding-top:10px">
+    <div class="wrap contact-grid scene">
+      <aside>
+        <span class="eyebrow reveal">Details</span>
+        <h2 class="reveal" data-d="1" style="font-size:1.9rem;margin:14px 0 24px">Ways to reach <span class="serif">SwiftSite</span></h2>
+        <div class="info-list reveal" data-d="2" id="info-list"></div>
+      </aside>
+
+      <form class="form-card glass gold-edge reveal" data-d="2" id="contact-form" novalidate>
+        <h2>Start a conversation</h2>
+        <p>All fields are required.</p>
+        <div class="row2">
+          <div class="field"><label for="name">Name</label><input id="name" name="name" type="text" autocomplete="name" placeholder="Your name"><span class="msg"></span></div>
+          <div class="field"><label for="email">Email</label><input id="email" name="email" type="email" autocomplete="email" placeholder="you@example.com"><span class="msg"></span></div>
+        </div>
+        <div class="field"><label for="projectType">Project Type</label>
+          <select id="projectType" name="projectType">
+            <option value="">Select a project type</option>
+            <option>Frontend Development</option><option>Backend Development</option><option>Full-Stack Applications</option>
+            <option>WordPress</option><option>AI Applications</option><option>E-Commerce</option><option>Automation</option>
+            <option>Cloud &amp; Deployment</option><option>Other</option>
+          </select><span class="msg"></span></div>
+        <div class="field"><label for="message">Message</label><textarea id="message" name="message" placeholder="A few words about your idea, goals and timeline…"></textarea><span class="msg"></span></div>
+        <button type="submit" class="btn btn-primary" style="width:100%;justify-content:center">Send Message <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+        <div class="form-note" id="form-note" role="status" aria-live="polite"></div>
+      </form>
+    </div>
+  </section>
+</main>
+<script src="js/script.js" defer></script>
+</body>
+</html>

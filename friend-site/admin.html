@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>SwiftSite – Admin Panel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body data-page="admin">
+
+<!-- ===== LOCK SCREEN ===== -->
+<div id="lock" class="lock-screen">
+  <div class="lock-card">
+    <div class="lock-badge">Ss</div>
+    <div id="s1">
+      <p class="lock-step">STEP 1 OF 2</p>
+      <h2>Admin Access</h2>
+      <p class="lock-sub">Enter the 4-digit security PIN.</p>
+      <div class="pw"><input id="pin" type="password" inputmode="numeric" maxlength="4" placeholder="••••" autocomplete="off" autofocus style="text-align:center;letter-spacing:.6em;font-size:1.3rem"><button class="eye" data-eye="pin" type="button" aria-label="Show PIN">👁</button></div>
+      <div class="lock-msg" id="m1"></div>
+    </div>
+    <div id="s2" class="hidden">
+      <p class="lock-step">STEP 2 OF 2</p>
+      <h2>Owner Login</h2>
+      <p class="lock-sub">Confirm your name and password.</p>
+      <div class="pw"><input id="nm" type="text" placeholder="Name" autocomplete="off"></div>
+      <div class="pw"><input id="pw" type="password" placeholder="Password" autocomplete="off"><button class="eye" data-eye="pw" type="button" aria-label="Show password">👁</button></div>
+      <div class="lock-msg" id="m2"></div>
+      <button class="btn-g" id="login" type="button" style="width:100%;margin-top:8px">Unlock Admin →</button>
+    </div>
+    <a class="home-link" href="index.html">← Back to website</a>
+  </div>
+</div>
+
+<!-- ===== ADMIN APP ===== -->
+<div id="app" class="admin-app hidden">
+  <aside class="aside">
+    <div class="brand"><span class="ss">Ss</span><div><strong>SwiftSite</strong><small>ADMIN PANEL</small></div></div>
+    <nav>
+      <a href="#" class="on" data-tab="dash" data-title="Dashboard">🏠 Dashboard</a>
+      <a href="#" data-tab="logo" data-title="Logo &amp; brand">🖼 Logo &amp; brand</a>
+      <a href="#" data-tab="home" data-title="Home page">✨ Home page</a>
+      <a href="#" data-tab="about" data-title="About page">👤 About page</a>
+      <a href="#" data-tab="services" data-title="Services">🛠 Services</a>
+      <a href="#" data-tab="prices" data-title="Pricing PKR / USD">💰 Pricing PKR/USD</a>
+      <a href="#" data-tab="projects" data-title="Projects">📁 Projects</a>
+      <a href="#" data-tab="contact" data-title="Contact &amp; social">📞 Contact &amp; social</a>
+      <a href="#" data-tab="bot" data-title="AI chatbot">🤖 AI chatbot</a>
+      <a href="#" data-tab="sec" data-title="Login &amp; security">🔒 Login &amp; security</a>
+    </nav>
+    <div class="aside-foot">
+      <a class="back" href="index.html">← View website</a>
+      <button class="back" id="lockBtn" type="button">🔒 Lock</button>
+    </div>
+  </aside>
+
+  <div class="admin-main">
+    <header class="admin-top">
+      <h1 id="title">Dashboard</h1>
+      <div class="row-btns">
+        <span class="live off" id="live" data-state="load">Connecting…</span>
+        <a class="btn-w" href="index.html" target="_blank" rel="noopener">View website</a>
+        <button class="btn-y" id="saveTop" type="button">💾 Save</button>
+      </div>
+    </header>
+
+    <!-- Dashboard -->
+    <section class="admin-body on" data-sec="dash">
+      <div class="dash-grid">
+        <div class="dash-card"><span>Brand</span><b id="d-brand">—</b></div>
+        <div class="dash-card"><span>Projects</span><b id="d-proj">—</b></div>
+        <div class="dash-card"><span>Live data size</span><b id="d-size">—</b></div>
+        <div class="dash-card"><span>Last saved</span><b id="d-saved" style="font-size:1rem">—</b></div>
+      </div>
+      <div class="card" style="margin-top:1rem">
+        <h2>Your images</h2>
+        <p class="hint">These are the pictures visitors see right now.</p>
+        <div class="dash-imgs">
+          <figure><div class="thumb contain" data-dash="logo"></div>Logo<br><button class="btn-w" type="button" data-go="logo">Change</button></figure>
+          <figure><div class="thumb round" data-dash="photoHome"></div>Home photo<br><button class="btn-w" type="button" data-go="home">Change</button></figure>
+          <figure><div class="thumb round" data-dash="photoAbout"></div>About photo<br><button class="btn-w" type="button" data-go="about">Change</button></figure>
+        </div>
+      </div>
+      <div class="card">
+        <h2>How this panel works</h2>
+        <p class="hint" style="margin:0">Every change saves by itself about 2 seconds after you stop typing, and then shows for all visitors. Wait for <b>✓ Live for everyone</b> before you close the page.<br><br>Open this panel with <b>Windows + Ctrl + Shift + M</b> on any page of the website, or type <b>/admin.html</b> after the website address (use that on a phone).</p>
+      </div>
+    </section>
+
+    <!-- Logo & brand -->
+    <section class="admin-body" data-sec="logo">
+      <div class="card">
+        <h2>Logo image</h2>
+        <p class="hint">Shown in the navbar and footer of every page. Upload a file, or paste a <b>direct image link</b>. For postimg.cc: open your picture, right-click it → <b>Copy image address</b> (it starts with <code>https://i.postimg.cc/</code>).</p>
+        <div class="img-field" data-key="logo"></div>
+      </div>
+      <div class="card">
+        <h2>Brand</h2>
+        <div class="grid4">
+          <div><label class="l" for="f-brand">Brand name</label><input class="i" id="f-brand"></div>
+          <div><label class="l" for="f-name">Your name</label><input class="i" id="f-name"></div>
+          <div><label class="l" for="f-role">Role</label><input class="i" id="f-role"></div>
+          <div><label class="l" for="f-location">Location</label><input class="i" id="f-location"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Home page -->
+    <section class="admin-body" data-sec="home">
+      <div class="card">
+        <h2>Home page photo</h2>
+        <p class="hint">The round portrait on the Home page. “Original photo” brings back the picture the website came with.</p>
+        <div class="img-field" data-key="photoHome"></div>
+      </div>
+      <div class="card">
+        <h2>Home page text</h2>
+        <label class="l" for="f-heroTitle">Name line</label><input class="i" id="f-heroTitle">
+        <label class="l" for="f-heroRole">Role line</label><input class="i" id="f-heroRole">
+        <label class="l" for="f-heroDesc">Description</label><textarea class="i" id="f-heroDesc" rows="3"></textarea>
+      </div>
+    </section>
+
+    <!-- About page -->
+    <section class="admin-body" data-sec="about">
+      <div class="card">
+        <h2>About page photo</h2>
+        <p class="hint">The round portrait on the About page. It can be different from the Home photo.</p>
+        <div class="img-field" data-key="photoAbout"></div>
+      </div>
+      <div class="card">
+        <h2>About text</h2>
+        <p class="hint">The first paragraph on the About page.</p>
+        <textarea class="i" id="f-aboutText" rows="5"></textarea>
+      </div>
+    </section>
+
+    <!-- Services -->
+    <section class="admin-body" data-sec="services">
+      <div class="card">
+        <h2>Services</h2>
+        <p class="hint">The six service cards are part of the Services page. Their prices are set on the pricing screen.</p>
+        <button class="btn-g" type="button" data-go="prices">Open pricing →</button>
+      </div>
+    </section>
+
+    <!-- Pricing -->
+    <section class="admin-body" data-sec="prices">
+      <div class="card">
+        <h2>Pricing PKR / USD</h2>
+        <p class="hint">Type a price in 🇵🇰 PKR and USD fills in by itself — or type 🇺🇸 USD and PKR fills in. 🗑 removes a price; the website then shows “Price on request”.</p>
+        <div style="max-width:220px"><label class="l" for="rate">1 USD = PKR</label><input class="i" id="rate" type="number" min="1"></div>
+        <div class="price-line price-head"><span>Service</span><span>🇵🇰 PKR</span><span>🇺🇸 USD</span><span></span></div>
+        <div id="priceRows"></div>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section class="admin-body" data-sec="projects">
+      <div class="card">
+        <div class="row-btns" style="justify-content:space-between"><h2 style="margin:0">Projects</h2><button class="btn-g" type="button" id="addProj">+ Add project</button></div>
+        <p class="hint" style="margin:.6rem 0 0">Each project can have an uploaded picture or an image link, a demo link and a GitHub link.</p>
+      </div>
+      <div id="projList"></div>
+    </section>
+
+    <!-- Contact & social -->
+    <section class="admin-body" data-sec="contact">
+      <div class="card">
+        <h2>Contact &amp; social</h2>
+        <p class="hint">Clear a field to remove that link from the website. WhatsApp: country code and number, digits only (for example 923133073742).</p>
+        <div class="grid2">
+          <div><label class="l" for="f-email">Email</label><input class="i" id="f-email" type="email"></div>
+          <div><label class="l" for="f-whatsapp">WhatsApp number</label><input class="i" id="f-whatsapp" inputmode="tel"></div>
+          <div><label class="l" for="f-phone">Phone as shown on the website</label><input class="i" id="f-phone"></div>
+          <div><label class="l" for="f-github">GitHub link</label><input class="i" id="f-github" placeholder="https://github.com/…"></div>
+          <div><label class="l" for="f-instagram">Instagram link</label><input class="i" id="f-instagram" placeholder="https://www.instagram.com/…"></div>
+          <div><label class="l" for="f-linkedin">LinkedIn link</label><input class="i" id="f-linkedin" placeholder="https://www.linkedin.com/in/…"></div>
+        </div>
+        <p class="hint" style="margin:1rem 0 0">The contact form sends its messages to the email above. A new email address has to confirm FormSubmit's activation email once before messages arrive.</p>
+      </div>
+    </section>
+
+    <!-- AI chatbot -->
+    <section class="admin-body" data-sec="bot">
+      <div class="card">
+        <h2>AI chatbot</h2>
+        <label class="l" style="display:flex;gap:.5rem;align-items:center"><input type="checkbox" id="botOn"> Show the chatbot on the website</label>
+        <label class="l" for="botName">Bot name</label><input class="i" id="botName">
+        <label class="l" for="botGreet">Greeting (empty = default greeting)</label><textarea class="i" id="botGreet" rows="2"></textarea>
+        <label class="l" for="botContact">Contact reply (empty = the bot lists your email, WhatsApp and Instagram)</label><textarea class="i" id="botContact" rows="2"></textarea>
+      </div>
+      <div class="card">
+        <div class="row-btns" style="justify-content:space-between"><h2 style="margin:0">Custom answers</h2><button class="btn-g" type="button" id="addFaq">+ Add New AI Message</button></div>
+        <p class="hint" style="margin:.6rem 0 1rem">Separate keywords with commas. When a visitor's question contains one of them, the bot gives your answer.</p>
+        <div id="faqs"></div>
+      </div>
+    </section>
+
+    <!-- Login & security -->
+    <section class="admin-body" data-sec="sec">
+      <div class="card">
+        <h2>Login &amp; security</h2>
+        <p class="hint" style="margin:0">There is no admin button on the website. This panel opens with <b>Windows + Ctrl + Shift + M</b> or at <b>/admin.html</b>, and it locks again every time you leave it.<br><br>The PIN, name and password are written inside <code>admin.html</code>. Anyone who opens the website's files can read them, and anyone who knows the address can reach this login page. The lock keeps casual visitors out, but it is not real security.</p>
+      </div>
+    </section>
+
+    <div class="bar-bot">
+      <span class="hint" style="margin:0">Changes save automatically and go live for everyone.</span>
+      <button class="btn-y" id="saveBot" type="button">💾 Save now</button>
+    </div>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script src="script.js"></script>
+<script>
+(function () {
+  "use strict";
+  var S = window.SSCloud, PHOTO = S.PHOTO, SERVICES = S.SERVICES;
+  var ADMIN = { pin: "6247", secret: "7426", name: "MHARRYJS", pass: "Mharryjs123@" };
+  var INSULT = "BSDK — Aap MHARRYJS website ke owner nahi ho! Jao gand marwao, boss se lund ka sir! 😤";
+  var FIELDS = ["brand", "name", "role", "location", "heroTitle", "heroRole", "heroDesc", "aboutText", "email", "phone", "whatsapp", "instagram", "github", "linkedin"];
+  var IMG = {
+    logo:       { max: 200, mime: "image/png",  q: 1,    fallback: "",    none: "the built-in SS logo" },
+    photoHome:  { max: 720, mime: "image/jpeg", q: 0.82, fallback: PHOTO, none: "the original photo" },
+    photoAbout: { max: 720, mime: "image/jpeg", q: 0.82, fallback: PHOTO, none: "the original photo" }
+  };
+  var CATS = [["web", "Web"], ["ai", "AI"], ["ecom", "E-Commerce"]];
+  var loaded = false, saving = false, again = false, dirty = false, warned = false, timer = null;
+  var app = document.getElementById("app");
+
+  function $(id) { return document.getElementById(id); }
+  function each(sel, fn, root) { Array.prototype.forEach.call((root || document).querySelectorAll(sel), fn); }
+  function esc(s) { return String(s == null ? "" : s).replace(/[&<>"']/g, function (c) { return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]; }); }
+  function toast(m, t) { window.showToast(m, t); }
+  function setThumb(el, src) {
+    if (!el) return;
+    el.style.backgroundImage = src ? 'url("' + String(src).replace(/"/g, "%22") + '")' : "";
+    el.classList.toggle("empty", !src);
+  }
+  var C = S.merge((function () { try { return JSON.parse(localStorage.getItem(S.KEY)); } catch (e) { return null; } })());
+
+  /* ================= LOCK ================= */
+  // coming back with the browser's Back button must ask for the PIN again
+  window.addEventListener("pageshow", function (e) { if (e.persisted) location.reload(); });
+
+  document.addEventListener("click", function (e) {
+    var b = e.target.closest("[data-eye]"); if (!b) return;
+    var i = $(b.getAttribute("data-eye")), show = i.type === "password";
+    i.type = show ? "text" : "password"; b.textContent = show ? "🙈" : "👁";
+  });
+
+  function openApp() {
+    $("lock").classList.add("hidden"); app.classList.remove("hidden");
+    loadLive();
+  }
+  $("pin").addEventListener("input", function () {
+    var pin = $("pin"), m = $("m1"), v = pin.value.replace(/\D/g, "");
+    pin.value = v;
+    if (v.length < 4) { m.className = "lock-msg"; m.textContent = ""; return; }
+    if (v === ADMIN.secret) {
+      m.className = "lock-msg good"; m.textContent = "Welcome Mharryjs 😎👑"; pin.disabled = true;
+      setTimeout(openApp, 1200);
+    } else if (v === ADMIN.pin) {
+      m.className = "lock-msg good"; m.textContent = "Welcome Harry 👑 — aapka intezaar tha, sir!"; pin.disabled = true;
+      setTimeout(function () { $("s1").classList.add("hidden"); $("s2").classList.remove("hidden"); $("nm").focus(); }, 1300);
+    } else {
+      m.className = "lock-msg bad"; m.textContent = INSULT;
+      setTimeout(function () { pin.value = ""; }, 450);
+    }
+  });
+  function login() {
+    var m = $("m2");
+    if ($("nm").value.trim().toUpperCase() === ADMIN.name && $("pw").value === ADMIN.pass) {
+      m.className = "lock-msg good"; m.textContent = "Access granted ✓";
+      setTimeout(openApp, 500);
+    } else { m.className = "lock-msg bad"; m.textContent = "Ghalat naam ya password — dobara koshish karein."; }
+  }
+  $("login").addEventListener("click", login);
+  $("pw").addEventListener("keydown", function (e) { if (e.key === "Enter") login(); });
+
+  /* ================= NAVIGATION + STATUS ================= */
+  function go(tab) {
+    var link = document.querySelector('.aside nav a[data-tab="' + tab + '"]');
+    each(".aside nav a", function (a) { a.classList.toggle("on", a === link); });
+    each(".admin-body", function (s) { s.classList.toggle("on", s.getAttribute("data-sec") === tab); });
+    if (link) $("title").textContent = link.getAttribute("data-title");
+    window.scrollTo(0, 0);
+  }
+  var LIVE = {
+    load:    ["Connecting…", true],
+    pending: ["● Unsaved changes…", true],
+    saving:  ["Saving…", true],
+    ok:      ["✓ Live for everyone 🌍", false],
+    fail:    ["❌ Not saved — press Save", true],
+    offline: ["❌ Not connected — tap to retry", true]
+  };
+  function setLive(k) { var el = $("live"); el.textContent = LIVE[k][0]; el.classList.toggle("off", LIVE[k][1]); el.setAttribute("data-state", k); }
+
+  /* ================= IMAGES ================= */
+  // every .img-field gets: preview, upload, reset, link box
+  each(".img-field", function (f) {
+    var logo = f.getAttribute("data-key") === "logo";
+    f.innerHTML = '<div class="thumb ' + (logo ? "contain" : "round") + '"></div><div class="col">' +
+      '<div class="row-btns"><label class="btn-g">↑ Upload image<input type="file" class="f" accept="image/*" hidden></label>' +
+      '<button type="button" class="x ' + (logo ? "btn-r" : "btn-w") + '">' + (logo ? "🗑 Remove" : "↺ Original photo") + "</button></div>" +
+      '<p class="state"></p><input class="i u" type="url" placeholder="…or paste a direct image link (https://)"></div>';
+  });
+
+  function drawImg(key) {
+    var f = document.querySelector('.img-field[data-key="' + key + '"]'), o = IMG[key], v = C[key] || "";
+    setThumb(f.querySelector(".thumb"), v || o.fallback);
+    f.querySelector(".u").value = /^https?:/i.test(v) ? v : "";
+    f.querySelector(".state").textContent = "Now showing: " + (!v ? o.none : /^data:/.test(v) ? "your uploaded image" : "your image link") + ".";
+    setThumb(document.querySelector('[data-dash="' + key + '"]'), v || o.fallback);
+  }
+
+  // shrink an uploaded picture so the live data stays small
+  function compress(file, max, mime, q) {
+    return new Promise(function (res, rej) {
+      if (!/^image\//.test(file.type)) { rej(new Error("Please choose an image file.")); return; }
+      var r = new FileReader();
+      r.onerror = function () { rej(new Error("This file could not be read.")); };
+      r.onload = function () {
+        var img = new Image();
+        img.onerror = function () { rej(new Error("This image could not be opened. Try a JPG or PNG.")); };
+        img.onload = function () {
+          var w = img.naturalWidth || max, h = img.naturalHeight || max, k = Math.min(1, max / Math.max(w, h));
+          var c = document.createElement("canvas");
+          c.width = Math.max(1, Math.round(w * k)); c.height = Math.max(1, Math.round(h * k));
+          var ctx = c.getContext("2d");
+          if (mime === "image/jpeg") { ctx.fillStyle = "#fff"; ctx.fillRect(0, 0, c.width, c.height); }
+          ctx.drawImage(img, 0, 0, c.width, c.height);
+          res(c.toDataURL(mime, q));
+        };
+        img.src = r.result;
+      };
+      r.readAsDataURL(file);
+    });
+  }
+
+  // a pasted link must really open as a picture before it goes live
+  function checkLink(url) {
+    if (!/^https?:\/\//i.test(url)) return Promise.reject(new Error("The link must start with https://"));
+    if (/^https?:\/\/(www\.)?postimg\.cc\//i.test(url)) return Promise.reject(new Error("That is a postimg page link, not the picture. Open it, right-click the picture → Copy image address (it starts with https://i.postimg.cc/)."));
+    return new Promise(function (res, rej) {
+      var img = new Image(), done = false;
+      var t = setTimeout(function () { if (!done) { done = true; rej(new Error("This link took too long to load.")); } }, 10000);
+      img.onload = function () { if (done) return; done = true; clearTimeout(t); res(url); };
+      img.onerror = function () { if (done) return; done = true; clearTimeout(t); rej(new Error("This link did not open as a picture. Use the direct image address.")); };
+      img.src = url;
+    });
+  }
+
+  /* ================= PRICES ================= */
+  function drawPrices() {
+    $("priceRows").innerHTML = SERVICES.map(function (s) {
+      var p = (C.prices || {})[s[0]] || {};
+      return '<div class="price-line"><span>' + esc(s[1]) + '</span>' +
+        '<input class="i pk" data-id="' + s[0] + '" inputmode="numeric" placeholder="PKR" value="' + esc(p.pk) + '">' +
+        '<input class="i us" data-id="' + s[0] + '" inputmode="numeric" placeholder="USD" value="' + esc(p.us) + '">' +
+        '<button class="btn-r pr-del" type="button" title="Remove price">🗑</button></div>';
+    }).join("");
+  }
+  function priceBox(cls, id) { return document.querySelector("#priceRows ." + cls + '[data-id="' + id + '"]'); }
+  $("priceRows").addEventListener("input", function (e) {
+    var el = e.target, id = el.getAttribute("data-id"); if (!id) return;
+    var rate = Number($("rate").value) || 280, isPk = el.classList.contains("pk");
+    var v = parseFloat(el.value.replace(/[^\d.]/g, ""));
+    priceBox(isPk ? "us" : "pk", id).value = v > 0 ? (isPk ? Math.max(1, Math.round(v / rate)) : Math.round(v * rate / 100) * 100) : "";
+  });
+  $("priceRows").addEventListener("click", function (e) {
+    var b = e.target.closest(".pr-del"); if (!b) return;
+    each("input", function (i) { i.value = ""; }, b.parentNode);
+    schedule();
+  });
+  $("rate").addEventListener("input", function () {
+    var rate = Number($("rate").value) || 280;
+    each("#priceRows .us", function (us) {
+      var v = parseFloat(us.value);
+      if (v > 0) priceBox("pk", us.getAttribute("data-id")).value = Math.round(v * rate / 100) * 100;
+    });
+  });
+
+  /* ================= PROJECTS ================= */
+  function drawProjects() {
+    var list = C.projects || [];
+    $("projList").innerHTML = list.map(function (p, i) {
+      var link = /^https?:/i.test(p.img || "") ? p.img : "";
+      return '<div class="card proj" data-pi="' + i + '">' +
+        '<div class="proj-head"><div class="thumb"></div><div class="row-btns">' +
+          '<label class="btn-g">🖼 Upload image<input type="file" class="p-file" accept="image/*" hidden></label>' +
+          '<button class="btn-w p-noimg" type="button">Remove image</button>' +
+          '<button class="btn-r p-del" type="button">🗑 Delete project</button></div></div>' +
+        '<div class="grid2"><div><label class="l">Project name</label><input class="i p-title" value="' + esc(p.title) + '"></div>' +
+          '<div><label class="l">Category</label><select class="i p-cat">' + CATS.map(function (c) { return '<option value="' + c[0] + '"' + (p.cat === c[0] ? " selected" : "") + ">" + c[1] + "</option>"; }).join("") + "</select></div></div>" +
+        '<label class="l">Description</label><textarea class="i p-desc" rows="2">' + esc(p.desc) + "</textarea>" +
+        '<div class="grid2"><div><label class="l">🚀 Demo link</label><input class="i p-demo" placeholder="https://" value="' + esc(p.demo) + '"></div>' +
+          '<div><label class="l">💻 GitHub link</label><input class="i p-gh" placeholder="https://" value="' + esc(p.github) + '"></div></div>' +
+        '<div class="grid2"><div><label class="l">Image link (instead of an upload)</label><input class="i p-img" placeholder="https://i.postimg.cc/…" value="' + esc(link) + '"></div>' +
+          '<div><label class="l">Technologies (comma separated)</label><input class="i p-tech" value="' + esc((p.tech || []).join(", ")) + '"></div></div>' +
+        "</div>";
+    }).join("") || '<div class="card"><p class="hint" style="margin:0">No projects yet — press “+ Add project”.</p></div>';
+    each("#projList .proj", function (row) { setThumb(row.querySelector(".thumb"), (list[+row.getAttribute("data-pi")] || {}).img); });
+    $("d-proj").textContent = list.length;
+  }
+  // copy what is typed in the rows back into C.projects (uploaded pictures stay in memory)
+  function syncProjects() {
+    var old = C.projects || [];
+    C.projects = Array.prototype.map.call(document.querySelectorAll("#projList .proj"), function (row) {
+      var o = old[+row.getAttribute("data-pi")] || {}, link = row.querySelector(".p-img").value.trim();
+      function v(c) { return row.querySelector(c).value.trim(); }
+      return {
+        id: o.id || "p" + Date.now() + Math.random().toString(36).slice(2, 6),
+        title: v(".p-title"), cat: v(".p-cat"), desc: v(".p-desc"), demo: v(".p-demo"), github: v(".p-gh"),
+        img: link || (/^data:/.test(o.img || "") ? o.img : ""),
+        tech: v(".p-tech").split(",").map(function (s) { return s.trim(); }).filter(Boolean)
+      };
+    });
+  }
+  $("addProj").addEventListener("click", function () {
+    syncProjects();
+    C.projects.unshift({ id: "p" + Date.now(), title: "New project", cat: "web", desc: "", tech: [], img: "", demo: "", github: C.github || "" });
+    drawProjects(); schedule();
+    var first = document.querySelector("#projList .p-title"); if (first) { first.focus(); first.select(); }
+  });
+  $("projList").addEventListener("click", function (e) {
+    var row = e.target.closest(".proj"); if (!row) return;
+    var i = +row.getAttribute("data-pi");
+    if (e.target.closest(".p-del")) {
+      if (!confirm("Delete this project from the website?")) return;
+      syncProjects(); C.projects.splice(i, 1); drawProjects(); schedule();
+    } else if (e.target.closest(".p-noimg")) {
+      syncProjects(); C.projects[i].img = ""; drawProjects(); schedule();
+    }
+  });
+
+  /* ================= CHATBOT ANSWERS ================= */
+  function drawFaqs() {
+    $("faqs").innerHTML = (C.bot.faqs || []).map(function (f) {
+      return '<div class="a-faq"><input class="i fk" placeholder="keywords, e.g. discount, offer" value="' + esc(f.k) + '">' +
+        '<textarea class="i fa" rows="2" placeholder="Answer">' + esc(f.a) + '</textarea><button class="btn-r f-del" type="button" title="Delete">🗑</button></div>';
+    }).join("");
+  }
+  function syncFaqs() {
+    C.bot.faqs = Array.prototype.map.call(document.querySelectorAll("#faqs .a-faq"), function (r) {
+      return { k: r.querySelector(".fk").value.trim(), a: r.querySelector(".fa").value.trim() };
+    });
+  }
+  $("addFaq").addEventListener("click", function () {
+    syncFaqs(); C.bot.faqs.push({ k: "", a: "" }); drawFaqs();
+    var rows = document.querySelectorAll("#faqs .fk"); if (rows.length) rows[rows.length - 1].focus();
+  });
+  $("faqs").addEventListener("click", function (e) {
+    var b = e.target.closest(".f-del"); if (!b) return;
+    var idx = Array.prototype.indexOf.call($("faqs").children, b.parentNode);
+    syncFaqs(); C.bot.faqs.splice(idx, 1); drawFaqs(); schedule();
+  });
+
+  /* ================= FILL / COLLECT ================= */
+  function dash(kb) {
+    $("d-brand").textContent = C.brand || "SwiftSite";
+    $("d-proj").textContent = (C.projects || []).length;
+    $("d-saved").textContent = C.savedAt ? new Date(C.savedAt).toLocaleString() : "Not saved yet";
+    if (kb) $("d-size").textContent = kb + " KB";
+  }
+  function fill() {
+    FIELDS.forEach(function (k) { $("f-" + k).value = C[k] == null ? "" : C[k]; });
+    $("rate").value = C.rate || 280;
+    $("botOn").checked = C.bot.enabled !== false;
+    $("botName").value = C.bot.name || "Swifty";
+    $("botGreet").value = C.bot.greeting || "";
+    $("botContact").value = C.bot.contact || "";
+    Object.keys(IMG).forEach(drawImg);
+    drawPrices(); drawProjects(); drawFaqs(); dash();
+  }
+  function collect() {
+    FIELDS.forEach(function (k) { C[k] = $("f-" + k).value.trim(); });
+    C.rate = Number($("rate").value) || 280;
+    C.prices = {};
+    SERVICES.forEach(function (s) { C.prices[s[0]] = { pk: priceBox("pk", s[0]).value.trim(), us: priceBox("us", s[0]).value.trim() }; });
+    syncProjects(); syncFaqs();
+    C.bot.enabled = $("botOn").checked;
+    C.bot.name = $("botName").value.trim() || "Swifty";
+    C.bot.greeting = $("botGreet").value.trim();
+    C.bot.contact = $("botContact").value.trim();
+    C.v = 2; C.savedAt = Date.now();
+    return C;
+  }
+
+  /* ================= LOAD + SAVE (cloud) ================= */
+  function loadLive() {
+    setLive("load");
+    S.get().then(function (d) {
+      C = S.merge(d);
+      fill(); loaded = true; dirty = false; warned = false; setLive("ok");
+      $("d-size").textContent = d ? Math.max(1, Math.round(JSON.stringify(d).length / 1024)) + " KB" : "Nothing saved yet";
+    }).catch(function () {
+      loaded = false; fill(); setLive("offline");
+      toast("❌ Could not load the live data. Saving is paused so nothing gets overwritten. Check the internet or turn off the ad-blocker for this site, then tap “Not connected”.", "error");
+    });
+  }
+
+  function schedule() {
+    if (!loaded) {
+      if (!warned) { warned = true; toast("❌ Not connected — your changes are not being saved. Tap “Not connected” to retry.", "error"); }
+      return;
+    }
+    dirty = true;
+    if (saving) { again = true; return; }
+    setLive("pending");
+    clearTimeout(timer); timer = setTimeout(save, 1800);
+  }
+
+  function save() {
+    clearTimeout(timer);
+    if (!loaded) { loadLive(); return; }
+    if (saving) { again = true; return; }
+    saving = true; again = false;
+    var data = collect(), stamp = data.savedAt, json = JSON.stringify(data), kb = Math.max(1, Math.round(json.length / 1024));
+    setLive("saving");
+    S.put(json)
+      .then(function () { return S.get(); })                       // read it back: only then is it really live
+      .then(function (back) {
+        if (!back || back.savedAt !== stamp) throw new Error("not stored");
+        try { localStorage.setItem(S.KEY, json); } catch (e) {}
+        dirty = again; setLive(again ? "pending" : "ok"); dash(kb);
+      })
+      .catch(function () {
+        dirty = true; setLive("fail");
+        toast("❌ Not saved. Check the internet or turn off the ad-blocker for this site, then press Save. If it keeps failing, the pictures may be too big — use image links instead of uploads. (Data: " + kb + " KB)", "error");
+      })
+      .then(function () { saving = false; if (again) schedule(); });
+  }
+
+  window.addEventListener("beforeunload", function (e) { if (dirty || saving) { e.preventDefault(); e.returnValue = ""; } });
+
+  /* ================= EVENTS ================= */
+  app.addEventListener("click", function (e) {
+    var t = e.target, el;
+    if ((el = t.closest("[data-tab]"))) { e.preventDefault(); go(el.getAttribute("data-tab")); }
+    else if ((el = t.closest("[data-go]"))) go(el.getAttribute("data-go"));
+    else if ((el = t.closest(".img-field .x"))) {
+      var key = el.closest(".img-field").getAttribute("data-key");
+      C[key] = ""; drawImg(key); schedule();
+    }
+    else if (t.closest("#saveTop, #saveBot")) save();
+    else if (t.closest("#live")) { if (!loaded) loadLive(); }
+    else if (t.closest("#lockBtn")) location.reload();
+  });
+
+  app.addEventListener("change", function (e) {
+    var t = e.target, field = t.closest(".img-field"), row = t.closest(".proj");
+    if (field) {
+      var key = field.getAttribute("data-key"), o = IMG[key];
+      if (t.classList.contains("f") && t.files && t.files[0]) {
+        compress(t.files[0], o.max, o.mime, o.q)
+          .then(function (data) { C[key] = data; drawImg(key); schedule(); toast("Image added ✓", "success"); })
+          .catch(function (err) { toast("❌ " + err.message, "error"); });
+        t.value = "";
+      } else if (t.classList.contains("u")) {
+        var v = t.value.trim();
+        if (!v) { if (/^https?:/i.test(C[key] || "")) { C[key] = ""; drawImg(key); schedule(); } return; }
+        checkLink(v)
+          .then(function () { C[key] = v; drawImg(key); schedule(); toast("Image link added ✓", "success"); })
+          .catch(function (err) { toast("❌ " + err.message, "error"); });
+      }
+    } else if (row) {
+      var i = +row.getAttribute("data-pi");
+      if (t.classList.contains("p-file") && t.files && t.files[0]) {
+        compress(t.files[0], 900, "image/jpeg", 0.75)
+          .then(function (data) {
+            syncProjects(); if (!C.projects[i]) return;
+            C.projects[i].img = data; drawProjects(); schedule(); toast("Project image added ✓", "success");
+          })
+          .catch(function (err) { toast("❌ " + err.message, "error"); });
+        t.value = "";
+      } else if (t.classList.contains("p-img")) {
+        var link = t.value.trim();
+        if (!link) { syncProjects(); drawProjects(); return; }
+        checkLink(link)
+          .then(function () { setThumb(row.querySelector(".thumb"), link); })
+          .catch(function (err) { t.value = ""; toast("❌ " + err.message, "error"); schedule(); });
+      }
+    }
+  });
+
+  // typing anywhere in the panel = auto-save (image link boxes are checked first, on change)
+  app.addEventListener("input", function (e) {
+    var t = e.target;
+    if (t.type === "file" || t.classList.contains("u")) return;
+    schedule();
+  });
+})();
+</script>
+</body>
+</html>
